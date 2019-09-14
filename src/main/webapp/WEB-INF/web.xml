@@ -1,0 +1,65 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+	<display-name>Archetype Created Web Application</display-name>
+	
+	<context-param>
+		<param-name>ratePerUnitCommericial</param-name>
+		<param-value>8</param-value>
+	</context-param>
+	<!-- <servlet>
+		<servlet-name>userregistration</servlet-name>
+		<servlet-class>com.wallet.paybill.servlet.UserRegistrationServlet</servlet-class>
+	</servlet> -->
+	<servlet>
+		<servlet-name>tspayelectricityservlet</servlet-name>
+		<servlet-class>com.wallet.paybill.servlet.TSPayElectricityServlet</servlet-class>
+
+		<init-param>
+			<param-name>ratePerUnit</param-name>
+			<param-value>5</param-value>
+		</init-param>
+
+	</servlet>
+
+	<servlet>
+		<servlet-name>keralapayelectricityservlet</servlet-name>
+		<servlet-class>com.wallet.paybill.servlet.KeralaPayElectricityServlet</servlet-class>
+
+		<init-param>
+			<param-name>ratePerUnit</param-name>
+			<param-value>6</param-value>
+		</init-param>
+	</servlet>
+	<servlet>
+		<servlet-name>calculateservlet</servlet-name>
+		<servlet-class>com.wallet.paybill.servlet.CalclulateElectricityBillServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>tspayelectricityservlet</servlet-name>
+		<url-pattern>/tspayelectricity</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>keralapayelectricityservlet</servlet-name>
+		<url-pattern>/keralapayelectricity</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>calculateservlet</servlet-name>
+		<url-pattern>/calculate</url-pattern>
+	</servlet-mapping>
+	
+	<!-- <servlet-mapping>
+		<servlet-name>userregistration</servlet-name>
+		<url-pattern>/saveuser</url-pattern>
+	</servlet-mapping> -->
+
+
+	<welcome-file-list>
+		<welcome-file>user-registration.html</welcome-file>
+	</welcome-file-list>
+
+</web-app>

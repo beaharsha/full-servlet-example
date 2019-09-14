@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Calculate Current bill</title>
+</head>
+<body>
+
+	<form action="tspayelectricity" method="post">
+		Previous reading :<input type="number" name="previous" required/><br>
+		Current reading :<input type="number" name="current" required/><br> 
+		State : <input type="text" name="state" value ="TS" readonly="true"/><br>
+		Type :<input type="text" name="type"/><br>
+		
+		<input type="submit" value="Submit">
+		<br><br>
+	</form>
+	
+		<form action="keralapayelectricity" method="post">
+		Previous reading : <input type="number" name="previous" required/><br>
+		Current reading: <input type="number" name="current" required/><br>
+		State :<input type="text" name="state" value="Kerala" readonly="true"/><br>
+		Type :<input type="text" name="type"/><br>
+		
+		<input type="submit" value="Submit">
+	</form>
+	
+	
+</body>
+</html>
