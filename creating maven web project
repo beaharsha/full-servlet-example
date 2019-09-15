@@ -1,0 +1,7 @@
+creating maven web project
+
+mvn archetype:generate 
+-DgroupId=com.myapp 
+-DartifactId=first-servlet 
+-DarchetypeArtifactId=maven-archetype-webapp 
+-DinteractiveMode=false
