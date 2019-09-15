@@ -22,7 +22,6 @@ public class TSPayElectricityServlet extends HttpServlet {
 		PrintWriter writer = resp.getWriter();
 		
 		Object obj = session.getAttribute("user");
-		if (obj != null) {
 			User user = (User) obj;
 
 			String type = req.getParameter("type");
@@ -36,14 +35,7 @@ public class TSPayElectricityServlet extends HttpServlet {
 
 			RequestDispatcher dispatcher = req.getRequestDispatcher("calculate");
 			dispatcher.include(req, resp);
-
-			
-
 			writer.append("Please pay ").append(type).append(" bill online or offiline before 20th of this month");
-		}
-	
-	else {
-		resp.sendRedirect("login.html");
-	}
+		
 	}
 }

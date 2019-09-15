@@ -5,26 +5,54 @@
 <title>Calculate Current bill</title>
 </head>
 <body>
-
+	<h2 style="text-align: center; color: #3B5998">TS Current Bill</h2>
 	<form action="tspayelectricity" method="post">
-		Previous reading :<input type="number" name="previous" required/><br>
-		Current reading :<input type="number" name="current" required/><br> 
-		State : <input type="text" name="state" value ="TS" readonly="true"/><br>
-		Type :<input type="text" name="type"/><br>
+		<table align="center">
+			<tr>
+				<td>Previous reading </td>
+				<td><input type="number" name="previous" required /></td>
+			</tr>
+			<tr>
+				<td>Current reading </td>
+				<td><input type="number" name="current" required /></td>
+			</tr>
+			<tr>
+				<td>State </td>
+				<td><input type="text" name="state" value="TS" readonly="true" /></td>
+			</tr>
+			<tr>
+				<td>Type </td>
+				<td><input type="text" name="type" /></td>
+			</tr>
+			<tr><td><input type="submit" value="Submit" /></td></tr>
+		</table>
 		
-		<input type="submit" value="Submit">
-		<br><br>
 	</form>
-	
-		<form action="keralapayelectricity" method="post">
-		Previous reading : <input type="number" name="previous" required/><br>
-		Current reading: <input type="number" name="current" required/><br>
-		State :<input type="text" name="state" value="Kerala" readonly="true"/><br>
-		Type :<input type="text" name="type"/><br>
+	<h2 style="text-align: center; color: #3B5998">Kerala Current Bill</h2>
+	<form action="keralapayelectricity" method="post">
+		<table align="center">
+			<tr>
+				<td>Previous reading </td>
+				<td><input type="number" name="previous" required /></td>
+			</tr>
+			<tr>
+				<td>Current reading </td>
+				<td><input type="number" name="current" required /></td>
+			</tr>
+			<tr>
+				<td>State </td>
+				<td><input type="text" name="state" value="Kerala"
+					readonly="true" /></td>
+			</tr>
+			<tr>
+				<td>Type </td>
+				<td><input type="text" name="type" /></td>
+			</tr>
+			<tr><td><input type="submit" value="Submit" /></td></tr>
+		</table>
 		
-		<input type="submit" value="Submit">
 	</form>
-	
-	
+
+
 </body>
 </html>
