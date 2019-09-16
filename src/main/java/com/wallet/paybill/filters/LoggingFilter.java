@@ -12,26 +12,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebFilter(urlPatterns = { "/tspayelectricity", "/keralapayelectricity" } )
-public class SessionFilter implements Filter {
+import com.myapp.firstservlet.model.User;
+
+@WebFilter(urlPatterns = {"/tspayelectricity", "/keralapayelectricity"})
+public class LoggingFilter implements Filter {
 
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
+		System.out.println();
 
 		HttpServletRequest httpServletRequest = (HttpServletRequest) request;
 		HttpServletResponse httpServletResponse = (HttpServletResponse) response;
-		
 		HttpSession session = httpServletRequest.getSession();
 		Object object = session.getAttribute("user");
-		System.out.println("Session Filter");
-		if(object != null) {
-			chain.doFilter(httpServletRequest, httpServletResponse);
-		}
-		else {
-			httpServletResponse.sendRedirect("login.html");
-		}
-		System.out.println("Session Filter completed");
+		User user = (User) object;
+		System.out.println("request from ");
+		chain.doFilter(httpServletRequest, httpServletResponse);
+		System.out.println("Request completed ");
 	}
-
 }

@@ -24,7 +24,6 @@ public class UserLoginServlet extends HttpServlet{
 		UserDetailsRepo detailsRepo = UserDetailsRepo.getInstane();
 		
 		User user = detailsRepo.getUser(userId, password);
-		
 		resp.setContentType("text/html");
 		PrintWriter writer = resp.getWriter();
 		
@@ -38,5 +37,8 @@ public class UserLoginServlet extends HttpServlet{
 			writer.append("Welcome "+user.getName());
 			writer.append("<a href= \"current_bill.html \" > ").append("Ts Electricity Bill click  Here</a>");
 		}
+		
+		
+			writer.close();
 	}
 }
